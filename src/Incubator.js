@@ -8,21 +8,22 @@ function App() {
   const [theme, setTheme] = useState(data[0]);
 
   const themeColors = {
-    "primaryColor": theme.primaryColor,
-    "secondaryColor": theme.secondaryColor,
-    "tertiaryColor": theme.tertiaryColor,
+    primaryColor: theme.primaryColor,
+    secondaryColor: theme.secondaryColor,
+    tertiaryColor: theme.tertiaryColor,
   }
 
   const restDropDown = {
-    "name": "restaurants-drop-down",
-    "label": "Select a Restaurant",
-    "array": data.map(restObj => restObj.name),
+    name: "restaurants-drop-down",
+    label: "Select a Restaurant",
+    array: data.map(restObj => restObj.name),
   }
 
   const restaurant = {
-    "name": theme.name,
-    "image": theme.image,
-    "menu": [...theme.menu],
+    name: theme.name,
+    logo: theme.logo,
+    logoNoText: theme.logoNoText,
+    menu: [...theme.menu],
   }
 
   const changeTheme = (newThemeName) => {
@@ -33,7 +34,7 @@ function App() {
 
   return (
     <main>
-      <Header title={restaurant.name} themeColors={themeColors} dropDownFunction={changeTheme} dropDownData={restDropDown}/>
+      <Header logo={restaurant.logoNoText} title={restaurant.name} themeColors={themeColors} dropDownFunction={changeTheme} dropDownData={restDropDown}/>
     </main>
   );
 }
