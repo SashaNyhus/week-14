@@ -15,6 +15,7 @@ const DropDownOption = styled(DropDownHeader)`
     
 const DropDownBox = styled.div`
     height: 40px;
+    width: ${props => props.dropDownWidth};
     &:hover {
         ${DropDownHeader} {
             background-color: ${props => props.themeColors.tertiaryColor};
@@ -50,7 +51,7 @@ const DropDownBox = styled.div`
     }
 `
 
-export const DropDown = ({themeColors, dropDownData, dropDownFunction}) => {
+export const DropDown = ({dropDownWidth, dropDownData, dropDownFunction, themeColors}) => {
     let optionsArray = dropDownData.array;
     let optionButtonsArray = optionsArray.map((optionName, optionIndex) => {
         return <DropDownOption 
@@ -59,7 +60,7 @@ export const DropDown = ({themeColors, dropDownData, dropDownFunction}) => {
             animationDelay={((optionIndex + 1) * .2) + "s"}
             onClick={() => dropDownFunction(optionName)}>
                 {optionName}</DropDownOption>})
-    return <DropDownBox themeColors={themeColors}>
+    return <DropDownBox dropDownWidth={dropDownWidth} themeColors={themeColors}>
         <DropDownHeader themeColors={themeColors}>{dropDownData.label}</DropDownHeader>
         {optionButtonsArray}
     </DropDownBox>

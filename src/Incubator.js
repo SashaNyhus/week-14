@@ -1,6 +1,7 @@
 import { useState } from "react";
 import './App.css';
 import { Header } from "./modules/header";
+import { RestaurantMenu } from "./modules/restaurant-menu";
 
 import data from "./restaurantdata";
 
@@ -15,7 +16,7 @@ function App() {
 
   const restDropDown = {
     name: "restaurants-drop-down",
-    label: "Select a Restaurant",
+    label: "Select a Different Restaurant",
     array: data.map(restObj => restObj.name),
   }
 
@@ -35,6 +36,7 @@ function App() {
   return (
     <main>
       <Header logo={restaurant.logoNoText} title={restaurant.name} themeColors={themeColors} dropDownFunction={changeTheme} dropDownData={restDropDown}/>
+      <RestaurantMenu menu={restaurant.menu} themeColors={themeColors} />
     </main>
   );
 }
