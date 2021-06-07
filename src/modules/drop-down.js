@@ -6,6 +6,7 @@ const DropDownHeader = styled.button`
     width: 100%;
     background-color: ${props => props.themeColors.secondaryColor};
     color: ${props => props.themeColors.tertiaryColor};
+    border: 1px solid ${props => props.themeColors.secondaryColor};
 `
 
 const DropDownOption = styled(DropDownHeader)`
@@ -23,7 +24,6 @@ const DropDownBox = styled.div`
         }
         ${DropDownOption} {
             visibility: visible;
-            
             animation-name: rotateIn;
             animation-duration: 0.75s;
             animation-fill-mode: forwards;

@@ -1,8 +1,8 @@
-const data = [
+export const data = [
 	{
 		name: "Space Taco Place",
 		primaryColor: "#A87748",
-		secondaryColor: "#6E8396",
+		secondaryColor: "#3c4853",
 		tertiaryColor: "#FDB403",
 		logo: "images/taco-logo.png",
 		logoNoText: "images/taco-logo-notext.png",
@@ -75,5 +75,3 @@ const data = [
 		]
 	},
 ];
-
-export default data;

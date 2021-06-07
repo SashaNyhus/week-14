@@ -2,8 +2,10 @@ import { useState } from "react";
 import './App.css';
 import { Header } from "./modules/header";
 import { RestaurantMenu } from "./modules/restaurant-menu";
+import { Footer } from "./modules/footer";
 
-import data from "./restaurantdata";
+import { data } from "./restaurantdata";
+import { footerData } from "./footer-data";
 
 function App() {
   const [theme, setTheme] = useState(data[0]);
@@ -37,6 +39,7 @@ function App() {
     <main>
       <Header logo={restaurant.logoNoText} title={restaurant.name} themeColors={themeColors} dropDownFunction={changeTheme} dropDownData={restDropDown}/>
       <RestaurantMenu menu={restaurant.menu} themeColors={themeColors} />
+      <Footer data={footerData} buttonFunction={changeTheme} themeColors={themeColors} />
     </main>
   );
 }
