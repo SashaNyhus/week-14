@@ -10,7 +10,7 @@ const PageHeader = styled.header`
     justify-content: space-around;
     background-color: ${props => props.themeColors.primaryColor};
     color: ${props => props.themeColors.tertiaryColor};
-    /* border: 3px solid ${props => (props.themeColors.secondaryColor)}; */
+    border-bottom: 1px solid ${props => (props.themeColors.secondaryColor)};
     font-family: sans-serif;
     img {
         width: 100px;

@@ -1,5 +1,5 @@
 export const footerData = {
-        'Space Incubator, Space Food For Your Entire Space Family': [
+        'Space Incubator: Space Food For Your Entire Space Family': [
             {
                 type: "external-link",
                 name: "About Us",
@@ -21,7 +21,7 @@ export const footerData = {
                 url: ""
             }
         ],
-        "Now Serving": [
+        "Now Serving:": [
             {
                 type: "img-button",
                 image: "images/taco-logo.png",
