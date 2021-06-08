@@ -46,21 +46,21 @@ const ItemInfoBox = styled.div`
 `
 
 
-export const RestaurantMenu = ({menu, themeColors}) => {
-    let MenuItemsArray = menu.map(itemObj => <MenuItem itemObj={itemObj} themeColors={themeColors}/>)
+export const RestaurantMenu = ({menu, buttonFunction, themeColors}) => {
+    let MenuItemsArray = menu.map(itemObj => <MenuItem itemObj={itemObj} buttonFunction={buttonFunction} themeColors={themeColors}/>)
     return <MenuBox themeColors={themeColors}>
         <h2>Menu</h2>
         {MenuItemsArray}
     </MenuBox>
 }
 
-const MenuItem = ({itemObj, themeColors}) => {
+const MenuItem = ({itemObj, buttonFunction, themeColors}) => {
     return <ItemBox themeColors={themeColors}>
         <img src={itemObj.image} alt={itemObj.name} />
         <ItemInfoBox themeColors={themeColors}>
             <h3>{itemObj.name}</h3>
             <h3>{`$${itemObj.price}`}</h3>
-            <button>Add to Order</button>
+            <button onClick={() => buttonFunction(itemObj.name, 1)}>Add to Order</button>
         </ItemInfoBox>
     </ItemBox>
 }

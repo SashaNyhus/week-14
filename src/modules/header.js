@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {DropDown} from "./drop-down";
+import {CartButton} from "./cart"
 
 const PageHeader = styled.header`
     box-sizing: border-box;
@@ -15,12 +16,23 @@ const PageHeader = styled.header`
     img {
         width: 100px;
     }
+    button {
+        height: 40px;
+        background-color: ${props => props.themeColors.secondaryColor};
+        color: ${props => props.themeColors.tertiaryColor};
+        border: 1px solid ${props => props.themeColors.secondaryColor}; 
+        &:hover{
+            background-color: ${props => props.themeColors.tertiaryColor};
+            color: ${props => props.themeColors.secondaryColor};
+        }
+    }
 `
 
-export const Header = ({logo, title, themeColors, dropDownFunction, dropDownData}) => {
+export const Header = ({logo, title, themeColors, dropDownFunction, dropDownData, cartTotal, cartButtonFunction}) => {
     return <PageHeader themeColors={themeColors} >
         <img src={logo} />
         <h1>{title}</h1>
+        <CartButton cartTotal={cartTotal} cartButtonFunction={cartButtonFunction}/>
         <DropDown dropDownWidth="200px" dropDownData={dropDownData} dropDownFunction={dropDownFunction} themeColors={themeColors}/>
     </PageHeader>
 }
